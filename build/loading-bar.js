@@ -200,7 +200,7 @@ angular.module('cfp.loadingBar', [])
           $animate = $injector.get('$animate');
         }
 
-        var $parent = $parentSelector[0] === '#' ? angular.element($document[0].getElementById($parentSelector)) : $document.find($parentSelector).eq(0);
+        var $parent = $parentSelector[0] === '#' ? angular.element($document[0].getElementById($parentSelector.substring(1))) : $document.find($parentSelector).eq(0);
         var element = $parentSelector[0] === '#' ? parent[0] : $parent[0].lastChild;
         $timeout.cancel(completeTimeout);
 
