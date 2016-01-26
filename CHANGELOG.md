@@ -1,8 +1,8 @@
 Changelog
 ==========
-## 0.8.0
+## 0.9.0
 - remove spinner
-- better parent selector
+- better parent selector with support find ids
 
 ## 0.8.0
 - auto incrementing is now configurable
