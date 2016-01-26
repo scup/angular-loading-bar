@@ -201,7 +201,7 @@ angular.module('cfp.loadingBar', [])
         }
 
         var $parent = $parentSelector[0] === '#' ? angular.element($document[0].getElementById($parentSelector.substring(1))) : $document.find($parentSelector).eq(0);
-        var element = $parentSelector[0] === '#' ? parent[0] : $parent[0].lastChild;
+        var element = $parentSelector[0] === '#' ? $parent[0] : $parent[0].lastChild;
         $timeout.cancel(completeTimeout);
 
         // do not continually broadcast the started event:
