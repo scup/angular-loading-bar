@@ -1,6 +1,9 @@
 Changelog
 ==========
 ## 0.9.0
+- remove includeBar option
+
+## 0.9.0
 - remove spinner
 - better parent selector with support find ids
 
