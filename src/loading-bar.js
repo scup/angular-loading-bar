@@ -161,20 +161,17 @@ angular.module('cfp.loadingBar', [])
   .provider('cfpLoadingBar', function() {
 
     this.autoIncrement = true;
-    this.includeSpinner = true;
     this.includeBar = true;
     this.latencyThreshold = 100;
     this.startSize = 0.02;
     this.parentSelector = 'body';
-    this.spinnerTemplate = '<div id="loading-bar-spinner"><div class="spinner-icon"></div></div>';
     this.loadingBarTemplate = '<div id="loading-bar"><div class="bar"><div class="peg"></div></div></div>';
 
     this.$get = ['$injector', '$document', '$timeout', '$rootScope', function ($injector, $document, $timeout, $rootScope) {
       var $animate;
       var $parentSelector = this.parentSelector,
         loadingBarContainer = angular.element(this.loadingBarTemplate),
-        loadingBar = loadingBarContainer.find('div').eq(0),
-        spinner = angular.element(this.spinnerTemplate);
+        loadingBar = loadingBarContainer.find('div').eq(0);
 
       var incTimeout,
         completeTimeout,
@@ -182,7 +179,6 @@ angular.module('cfp.loadingBar', [])
         status = 0;
 
       var autoIncrement = this.autoIncrement;
-      var includeSpinner = this.includeSpinner;
       var includeBar = this.includeBar;
       var startSize = this.startSize;
 
@@ -207,11 +203,7 @@ angular.module('cfp.loadingBar', [])
         started = true;
 
         if (includeBar) {
-          $animate.enter(loadingBarContainer, $parent, angular.element(element));
-        }
-
-        if (includeSpinner) {
-          $animate.enter(spinner, $parent, angular.element($parent[0].lastChild));
+          $animate.enter(loadingBarContainer, $parent);
         }
 
         _set(startSize);
@@ -301,7 +293,6 @@ angular.module('cfp.loadingBar', [])
           if (promise && promise.then) {
             promise.then(_completeAnimation);
           }
-          $animate.leave(spinner);
         }, 500);
       }
 
@@ -312,7 +303,6 @@ angular.module('cfp.loadingBar', [])
         inc              : _inc,
         complete         : _complete,
         autoIncrement    : this.autoIncrement,
-        includeSpinner   : this.includeSpinner,
         latencyThreshold : this.latencyThreshold,
         parentSelector   : this.parentSelector,
         startSize        : this.startSize
