@@ -190,18 +190,11 @@ angular.module('cfp.loadingBar', [])
        * Inserts the loading bar element into the dom, and sets it to 2%
        */
       function _start() {
-        var parent;
-
         if (!$animate) {
           $animate = $injector.get('$animate');
         }
 
-        if ($parentSelector[0] === '#') {
-          $parent = angular.element($document[0].getElementById($parentSelector));
-        } else {
-          $parent = $document.find($parentSelector).eq(0);
-        }
-
+        var $parent = $parentSelector[0] === '#' ? angular.element($document[0].getElementById($parentSelector)) : $document.find($parentSelector).eq(0);
         $timeout.cancel(completeTimeout);
 
         // do not continually broadcast the started event:
