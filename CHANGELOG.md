@@ -1,6 +1,10 @@
 Changelog
 ==========
 ## 0.8.0
+- remove spinner
+- better parent selector
+
+## 0.8.0
 - auto incrementing is now configurable
 ([#209](https://github.com/chieffancypants/angular-loading-bar/pull/209))
 - removed `version` from bower.json

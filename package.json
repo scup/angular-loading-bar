@@ -1,6 +1,6 @@
 {
   "name": "angular-loading-bar",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "An automatic loading bar for AngularJS",
   "main": "index.js",
   "directories": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/chieffancypants/angular-loading-bar.git"
+    "url": "git://github.com/scup/angular-loading-bar.git"
   },
   "keywords": [
     "angular",
@@ -19,12 +19,14 @@
     "progress",
     "progressbar"
   ],
-  "author": "Wes Cruver",
+  "authors": [
+    "Wes Cruver",
+    "SCUP"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chieffancypants/angular-loading-bar/issues"
+    "url": "https://github.com/scup/angular-loading-bar/issues"
   },
-  "homepage": "https://chieffancypants.github.io/angular-loading-bar",
   "devDependencies": {
     "karma-jasmine": "^0.1.3",
     "karma-coffee-preprocessor": "^0.2.0",
